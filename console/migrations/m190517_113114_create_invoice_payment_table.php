@@ -18,7 +18,6 @@ class m190517_113114_create_invoice_payment_table extends BaseMigration
             'invoice_id' => $this->integer(),
             'amount_paid' => $this->double(2)->notNull(),
         ]);
-
         $this->addForeignKey('fk-payment-invoice-id-', $this->tableName, 'invoice_id', '{{%invoice}}', 'id', 'RESTRICT', 'CASCADE');
     }
 
