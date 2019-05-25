@@ -7,8 +7,9 @@ namespace frontend\controllers;
 use common\extend\BaseWebController;
 use common\models\search\InvoiceSearch;
 use Yii;
+use yii\web\Controller;
 
-class InvoiceController extends BaseWebController
+class InvoiceController extends Controller
 {
     /**
      * Lists all Invoice models for the logged in user.

@@ -5,11 +5,12 @@ namespace backend\controllers;
 use common\extend\BaseWebController;
 use common\models\LoginForm;
 use Yii;
+use yii\web\Controller;
 
 /**
  * Site controller
  */
-class SiteController extends BaseWebController
+class SiteController extends Controller
 {
     /**
      * Displays homepage.
