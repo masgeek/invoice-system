@@ -47,7 +47,7 @@ return [
         'webshell' => [
             'class' => 'samdark\webshell\Module',
             // 'yiiScript' => Yii::getAlias('@root'). '/yii', // adjust path to point to your ./yii script
-            'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.2'],
+            'allowedIPs' => ['127.0.0.1', '::1', '141.80.234.65'],
             'checkAccessCallback' => function (Action $action) {
                 // return true if access is granted or false otherwise
                 return true;
