@@ -2,12 +2,12 @@
 
 namespace backend\assets;
 
-use yii\web\AssetBundle;
+use common\extend\assets\BaseAssetBundle;
 
 /**
  * Main backend application asset bundle.
  */
-class AppAsset extends AssetBundle
+class AppAsset extends BaseAssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
@@ -18,6 +18,7 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
+        //'yidas\yii\fontawesome\FontawesomeAsset',
     ];
 }

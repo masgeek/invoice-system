@@ -28,6 +28,7 @@ class m190517_104435_create_user_profile_table extends BaseMigration
             'updated_at' => $this->timestamp()->defaultValue(null),
         ], $this->tableOptions);
 
+
         $this->addForeignKey('fk-user-id', $this->tableName, 'user_id', '{{%user}}', 'id', 'CASCADE', 'CASCADE');
     }
 
@@ -36,6 +37,7 @@ class m190517_104435_create_user_profile_table extends BaseMigration
      */
     public function safeDown()
     {
+        $this->dropForeignKey('fk-user-id', $this->tableName);
         $this->dropTable($this->tableName);
     }
 }
