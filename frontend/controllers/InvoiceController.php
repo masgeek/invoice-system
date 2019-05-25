@@ -4,7 +4,7 @@
 namespace frontend\controllers;
 
 
-use common\extend\controllers\BaseWebController;
+use common\extend\BaseWebController;
 use common\models\search\InvoiceSearch;
 use Yii;
 
