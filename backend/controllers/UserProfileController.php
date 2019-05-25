@@ -6,13 +6,14 @@ use Yii;
 use common\models\UserProfile;
 use common\models\search\UserProfileSearch;
 use common\extend\BaseWebController;
+use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * UserProfileController implements the CRUD actions for UserProfile model.
  */
-class UserProfileController extends BaseWebController
+class UserProfileController extends Controller
 {
 
     /**

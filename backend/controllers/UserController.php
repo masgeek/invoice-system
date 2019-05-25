@@ -7,13 +7,14 @@ use common\models\search\UserSearch;
 use common\models\User;
 use Yii;
 use yii\base\Exception;
+use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 
 /**
  * UserController implements the CRUD actions for User model.
  */
-class UserController extends BaseWebController
+class UserController extends Controller
 {
 
     /**

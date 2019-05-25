@@ -15,11 +15,12 @@ use Yii;
 use yii\base\Exception;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
+use yii\web\Controller;
 
 /**
  * Site controller
  */
-class SiteController extends BaseWebController
+class SiteController extends Controller
 {
     /**
      * Displays homepage.

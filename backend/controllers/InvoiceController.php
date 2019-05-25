@@ -11,12 +11,13 @@ use yii\data\ArrayDataProvider;
 use yii\db\Exception;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
+use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 /**
  * InvoiceController implements the CRUD actions for Invoice model.
  */
-class InvoiceController extends BaseWebController
+class InvoiceController extends Controller
 {
     public function behaviors()
     {
