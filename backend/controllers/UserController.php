@@ -2,7 +2,7 @@
 
 namespace backend\controllers;
 
-use common\extend\controllers\BaseWebController;
+use common\extend\BaseWebController;
 use common\models\search\UserSearch;
 use common\models\User;
 use Yii;

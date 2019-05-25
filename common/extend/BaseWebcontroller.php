@@ -1,22 +1,16 @@
 <?php
 /** @noinspection PhpUndefinedFieldInspection */
 
-namespace common\extend\controllers;
+namespace common\extend;
 
 use common\components\PaypalComponent;
 use common\models\Invoice;
 use common\models\PaypalTransaction;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResendVerificationEmailForm;
-use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
-use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\Exception;
-use yii\base\InvalidArgumentException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
-use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 

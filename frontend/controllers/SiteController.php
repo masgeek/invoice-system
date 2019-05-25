@@ -2,7 +2,7 @@
 
 namespace frontend\controllers;
 
-use common\extend\controllers\BaseWebController;
+use common\extend\BaseWebController;
 use common\models\LoginForm;
 use common\models\User;
 use frontend\models\ContactForm;

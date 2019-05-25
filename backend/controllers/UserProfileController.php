@@ -5,7 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\UserProfile;
 use common\models\search\UserProfileSearch;
-use common\extend\controllers\BaseWebController;
+use common\extend\BaseWebController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
