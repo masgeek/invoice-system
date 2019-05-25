@@ -1,5 +1,3 @@
-php_value upload_max_filesize 10M
-php_value post_max_size 10M
 # ----------------------------------------------------------------------
 # Adds some security for the Apache server configuration for use with
 # yii2-app-practical template.
@@ -39,7 +37,6 @@ php_value post_max_size 10M
 </IfModule>
 
 # Settings to hide index.php and ensure pretty urls
-Options -Indexes
 RewriteEngine on
 
 # if a directory or a file exists, use it directly
