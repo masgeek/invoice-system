@@ -25,8 +25,8 @@ class m190517_112155_create_invoice_table extends BaseMigration
             'invoice_due_date' => $this->timestamp(null),
             'created_at' => $this->timestamp(),
             'updated_at' => $this->timestamp()->defaultValue(null),
-            'updated_by' => $this->string(),
-            'created_by' => $this->string(),
+            'updated_by' => $this->integer(),
+            'created_by' => $this->integer(),
         ], $this->tableOptions);
 
         $this->addForeignKey('fk-user-invoice-id', $this->tableName, 'user_id', '{{%user}}', 'id', 'RESTRICT', 'CASCADE');
@@ -37,6 +37,7 @@ class m190517_112155_create_invoice_table extends BaseMigration
      */
     public function safeDown()
     {
+        $this->dropForeignKey('fk-user-invoice-id', $this->tableName);
         $this->dropTable($this->tableName);
     }
 }

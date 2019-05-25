@@ -4,8 +4,8 @@
 namespace console\models;
 
 
-use yii\db\Migration;
 use Yii;
+use yii\db\Migration;
 
 /**
  *
@@ -17,6 +17,7 @@ class BaseMigration extends Migration
     public $tableOptions;
 
     public $tableName;
+    public $refTableName;
 
     public $filePath;
 
@@ -25,7 +26,7 @@ class BaseMigration extends Migration
     public function __construct(array $config = [])
     {
         parent::__construct($config);
-        $this->filePath = \Yii::getAlias('@console') . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR;
+        $this->filePath = Yii::getAlias('@console') . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR;
 
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
@@ -44,7 +45,7 @@ class BaseMigration extends Migration
     public function getTables()
     {
         $cleanedTables = [];
-        $connection = Yiy::$app->db;
+        $connection = Yii::$app->db;
         $dbSchema = $connection->schema;
         $tables = $dbSchema->getTableNames();//returns array of tbl schema's
         foreach ($tables as $tableName) {
