@@ -19,9 +19,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $root  = Yii::getAlias('@base');
-
-        return $root;
         return $this->render('index');
     }
 

@@ -46,12 +46,8 @@ return [
         ],
         'webshell' => [
             'class' => 'samdark\webshell\Module',
-            'yiiScript' => Yii::getAlias('@base'). '/yii', // adjust path to point to your ./yii script
-            'allowedIPs' => ['127.0.0.1', '::1', '141.80.234.65'],
-            'checkAccessCallback' => function (Action $action) {
-                // return true if access is granted or false otherwise
-                return true;
-            }
+            'yiiScript' => Yii::getAlias('@base'). '/yii',// adjust path to point to your ./yii script
+            'allowedIPs' => ['127.0.0.1', '::1', '141.80.234.65']
         ],
     ],
     'components' => [
@@ -61,7 +57,10 @@ return [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+            'identityCookie' => [
+                'name' => '_identity-backend',
+                'httpOnly' => true
+            ],
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
