@@ -37,7 +37,6 @@
 </IfModule>
 
 # Settings to hide index.php and ensure pretty urls
-Options -Indexes
 RewriteEngine on
 
 # if a directory or a file exists, use it directly
