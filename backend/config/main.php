@@ -46,7 +46,7 @@ return [
         ],
         'webshell' => [
             'class' => 'samdark\webshell\Module',
-            'yiiScript' => Yii::getAlias('@base'). '/yii', // adjust path to point to your ./yii script
+            'yiiScript' => Yii::getAlias('@base') . '/yii', // adjust path to point to your ./yii script
             'allowedIPs' => ['127.0.0.1', '::1', '141.80.234.65'],
             'checkAccessCallback' => function (Action $action) {
                 // return true if access is granted or false otherwise
@@ -55,6 +55,18 @@ return [
         ],
     ],
     'components' => [
+        /*'assetManager' => [
+
+            'assetMap' => [
+                'jquery.js' => '//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.js',
+            ],
+        ],*/
+        'view' => [
+            'theme' => [
+                'pathMap' => ['@app/views' => '@app/themes/adminor'],
+                'baseUrl' => '@web/themes/adminor',
+            ],
+        ],
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
