@@ -1,5 +1,6 @@
 <?php
-?>
+
+use yii\helpers\Html; ?>
 <nav class="navbar header-navbar pcoded-header">
     <div class="navbar-wrapper">
         <div class="navbar-logo">
@@ -20,7 +21,7 @@
                     <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
                 </li>
                 <li>
-                    <a href="#" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+                    <a href="#" onclick="toggleFullScreen()" class="waves-effect waves-light">
                         <i class="ti-fullscreen"></i>
                     </a>
                 </li>
@@ -56,6 +57,7 @@
                         <i class="ti-angle-down"></i>
                     </a>
                     <ul class="show-notification profile-notification">
+                        <!--
                         <li class="waves-effect waves-light">
                             <a href="#!">
                                 <i class="ti-settings"></i> Settings
@@ -76,10 +78,16 @@
                                 <i class="ti-lock"></i> Lock Screen
                             </a>
                         </li>
-                        <li class="waves-effect waves-light">
-                            <a href="auth-normal-sign-in.html">
+                        -->
+                        <li class="waves-effect waves-dark">
+                            <?= Html::a('<i class="ti-layout-sidebar-left"></i> Logout', ['site/logout'], [
+                                'data' => ['method' => 'post'],
+                                'class' => ''
+                            ]) ?>
+                            <!--<a href="auth-normal-sign-in.html">
                                 <i class="ti-layout-sidebar-left"></i> Logout
                             </a>
+                            -->
                         </li>
                     </ul>
                 </li>

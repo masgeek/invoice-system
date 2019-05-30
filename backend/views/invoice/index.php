@@ -29,6 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'attribute' => 'user_id',
             'label' => 'User',
             'value' => function ($model) {
+                /* @var $model \common\models\Invoice */
                 return $model->user->username;
             },
             'filterType' => GridView::FILTER_SELECT2,
@@ -41,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         'invoice_sub_total',
         'invoice_total:Currency',
-        'invoice_status',
+        'invoiceStatus.status',
         'invoice_due_date:Date',
         [
             'class' => 'kartik\grid\ActionColumn',

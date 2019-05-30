@@ -10,7 +10,7 @@ use yii\web\Controller;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends BaseWebController
 {
     /**
      * Displays homepage.
@@ -30,6 +30,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $this->layout = 'login';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }

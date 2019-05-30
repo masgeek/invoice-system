@@ -18,17 +18,26 @@ use yii\helpers\Url; ?>
                 </a>
             </li>
         </ul>
+        <div class="pcoded-navigation-label">Sales</div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a href="<?= Url::to(['/invoice']) ?>" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="feather icon-menu"></i></span>
+                    <span class="pcoded-mtext">Invoices</span>
+                </a>
+            </li>
+        </ul>
 
         <div class="pcoded-navigation-label">User Management</div>
         <ul class="pcoded-item pcoded-left-item">
             <li>
-                <a href="<?= Url::to(['user/index']) ?>" class="waves-effect waves-dark">
+                <a href="<?= Url::to(['/user']) ?>" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="feather icon-menu"></i></span>
                     <span class="pcoded-mtext">Manager users</span>
                 </a>
             </li>
             <li>
-                <a href="<?= Url::to(['user-profile/index']) ?>" class="waves-effect waves-dark">
+                <a href="<?= Url::to(['/user-profile']) ?>" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="feather icon-menu"></i></span>
                     <span class="pcoded-mtext">Manager user profiles</span>
                 </a>

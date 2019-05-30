@@ -6,7 +6,7 @@ namespace backend\assets;
 
 use common\extend\assets\BaseAssetBundle;
 
-class MegaAssets extends BaseAssetBundle
+class MegaLoginAssets extends BaseAssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
@@ -14,10 +14,8 @@ class MegaAssets extends BaseAssetBundle
     public $css = [
         'files/assets/pages/waves/css/waves.min.css',
         'files/assets/icon/themify-icons/themify-icons.css',
-        'files/assets/icon/themify-icons/themify-icons.css',
+        'files/assets/icon/icofont/css/icofont.css',
         'files/assets/icon/font-awesome/css/font-awesome.min.css',
-        'files/assets/css/jquery.mCustomScrollbar.css',
-        'files/assets/pages/chart/radial/css/radial.css',
         'files/assets/css/style.css',
         //'files/assets/icon/feather/css/feather.css'
     ];
@@ -28,12 +26,6 @@ class MegaAssets extends BaseAssetBundle
         'files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js',
         'files/bower_components/modernizr/js/modernizr.js',
         'files/bower_components/modernizr/js/css-scrollbars.js',
-        'files/assets/js/pcoded.min.js',
-        'files/assets/js/vertical/vertical-layout.min.js',
-        'files/assets/js/jquery.mCustomScrollbar.concat.min.js',
-        //'https://www.amcharts.com/lib/3/amcharts.js',
-        //'files/assets/pages/dashboard/custom-dashboard.js',
-        //'files/assets/js/script.min.js'
         'files/assets/js/common-pages.js'
     ];
 

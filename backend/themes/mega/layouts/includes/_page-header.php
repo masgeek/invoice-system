@@ -11,13 +11,27 @@ use yii\helpers\Html; ?>
                 </div>
             </div>
             <div class="col-md-4">
+                <?=
+                \yii\widgets\Breadcrumbs::widget([
+                    'itemTemplate' => "<li class='breadcrumb-item'>{link}</li>\n", // template for all links,
+                    'activeItemTemplate' => "<li class='breadcrumb-item active'>{link}</li>",
+                    'tag' => 'ul',
+                    'options' => [
+                        'class' => 'breadcrumb'
+                    ],
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ]); ?>
+
+                <!--
                 <ul class="breadcrumb">
+
                     <li class="breadcrumb-item">
                         <a href="index.html"> <i class="fa fa-home"></i> </a>
                     </li>
                     <li class="breadcrumb-item"><a href="#!">Dashboard</a>
                     </li>
                 </ul>
+                -->
             </div>
         </div>
     </div>

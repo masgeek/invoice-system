@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'vat_percentage',
             'invoice_sub_total:currency',
             'invoice_total:currency',
-            'invoice_status',
+            'invoiceStatus.status',
             'invoice_due_date',
         ];
         echo DetailView::widget([
