@@ -32,8 +32,8 @@ class MegaAssets extends BaseAssetBundle
         'files/assets/js/pcoded.min.js',
         'files/assets/js/vertical/vertical-layout.min.js',
         'files/assets/js/jquery.mCustomScrollbar.concat.min.js',
-        'https://www.amcharts.com/lib/3/amcharts.js',
-        'files/assets/pages/dashboard/custom-dashboard.js',
+        //'https://www.amcharts.com/lib/3/amcharts.js',
+        //'files/assets/pages/dashboard/custom-dashboard.js',
         'files/assets/js/script.min.js'
     ];
 

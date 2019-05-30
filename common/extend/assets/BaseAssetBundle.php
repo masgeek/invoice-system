@@ -9,8 +9,8 @@ use yii\web\AssetBundle;
 class BaseAssetBundle extends AssetBundle
 {
     public $publishOptions = [
-        'forceCopy' => false,
-        'linkAssets' => true,
+        //'forceCopy' => false,
+        //'linkAssets' => true,
     ];
 
     public $css = [
