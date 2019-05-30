@@ -31,7 +31,7 @@ class MegaLoginAssets extends BaseAssetBundle
 
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\jui\JuiAsset',
+        //'yii\jui\JuiAsset',
         'yii\bootstrap\BootstrapPluginAsset',
     ];
 
