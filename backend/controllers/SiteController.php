@@ -30,7 +30,7 @@ class SiteController extends BaseWebController
      */
     public function actionLogin()
     {
-        $this->layout = 'login';
+       //$this->layout = 'login';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }

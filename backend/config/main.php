@@ -63,8 +63,11 @@ return [
         ],*/
         'view' => [
             'theme' => [
-                'pathMap' => ['@app/views' => '@app/themes/mega'],
-                'baseUrl' => '@web/themes/mega',
+                'pathMap' => [
+                    '@app/views' => '@app/themes/admin-lte'
+                  //  '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+                ],
+                //'baseUrl' => '@web/themes/default',
             ],
         ],
         'request' => [
