@@ -2,7 +2,7 @@
 
 namespace frontend\controllers;
 
-use common\extend\BaseWebController;
+use common\extend\controllers\WebController;
 use common\models\LoginForm;
 use common\models\User;
 use frontend\models\ContactForm;
@@ -20,8 +20,10 @@ use yii\web\Controller;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends WebController
 {
+    public $layout = 'login';
+
     /**
      * Displays homepage.
      *
@@ -29,6 +31,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout = 'main';
         return $this->render('index');
     }
 

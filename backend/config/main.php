@@ -63,8 +63,10 @@ return [
         ],*/
         'view' => [
             'theme' => [
-                'pathMap' => ['@app/views' => '@app/themes/adminor'],
-                'baseUrl' => '@web/themes/adminor',
+                'pathMap' => [
+                    '@app/views' => '@app/themes/admin-lte'
+                ],
+                'baseUrl' => '@web/themes/admin-lte',
             ],
         ],
         'request' => [

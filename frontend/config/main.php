@@ -10,8 +10,17 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultRoute' => 'invoice/index',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@app/views' => '@app/themes/admin-lte'
+                ],
+                'baseUrl' => '@web/themes/admin-lte',
+            ],
+        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],

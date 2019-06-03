@@ -1,1 +1,3 @@
 common/config/main-local.php
+backend/themes/admin-lte-base/**
+environments_old/**

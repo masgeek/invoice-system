@@ -3,6 +3,7 @@
 namespace common\models;
 
 use common\models\base\Invoice as BaseInvoice;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "invoice".
@@ -10,38 +11,43 @@ use common\models\base\Invoice as BaseInvoice;
 class Invoice extends BaseInvoice
 {
 
-    public const INVOICE_PAID = 0;
-    public const INVOICE_PENDING = 1;
-    public const INVOICE_CANCELLED = 3;
-    public const INVOICE_DRAFT = 4;
+    /**
+     * @deprecated
+     */
+    const INVOICE_PAID = 0;
+    /**
+     * @deprecated
+     */
+    const INVOICE_PENDING = 1;
+    /**
+     * @deprecated
+     */
+    const INVOICE_CANCELLED = 3;
+    /**
+     * @deprecated
+     */
+    const INVOICE_DRAFT = 4;
 
 
     public function invoiceStatuses()
     {
-        return [
-            self::INVOICE_DRAFT => $this->invoiceStatusDescription(self::INVOICE_DRAFT),
-            self::INVOICE_PENDING => $this->invoiceStatusDescription(self::INVOICE_PENDING),
-            self::INVOICE_PAID => $this->invoiceStatusDescription(self::INVOICE_PAID),
-            self::INVOICE_CANCELLED => $this->invoiceStatusDescription(self::INVOICE_CANCELLED),
-        ];
+        $statuses = ArrayHelper::map(InvoiceStatus::find()->asArray()->all(), 'id', 'status');
+
+        return $statuses;
     }
 
-    /**
-     * @param $status_id
-     * @return string
-     */
-    public function invoiceStatusDescription($status_id)
+    public function clientStatuses()
     {
-        switch ($status_id) {
-            case self::INVOICE_DRAFT:
-                return 'Draft Invoice';
-            case self::INVOICE_PENDING:
-                return 'Invoice Pending';
-            case self::INVOICE_PAID:
-                return 'Invoice Paid';
-            case self::INVOICE_CANCELLED:
-                return 'Invoice Cancelled';
+        $clientStatus = InvoiceStatus::find()
+            ->where(['client_visible' => true])
+            ->asArray();
+        $statuses = ArrayHelper::map($clientStatus->all(), 'id', 'status');
+
+        $vals = [];
+        foreach ($statuses as $key => $values) {
+            $vals[] = $key;
         }
+        return $vals;
     }
 
     /**
@@ -53,7 +59,6 @@ class Invoice extends BaseInvoice
         $subtotal = 0.0;
         foreach ($invoiceItems as $index => $invoiceItem) {
             $subtotal = $subtotal + $invoiceItem->item_cost;
-            echo $subtotal . "\n";
         }
         $this->invoice_sub_total = $subtotal;
 

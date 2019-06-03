@@ -22,6 +22,8 @@ use yii\widgets\ActiveForm;
     <?php if ($model->isNewRecord): ?>
         <?= $form->field($model, 'password')->passwordInput() ?>
         <?= $form->field($model, 'confirm_password')->passwordInput() ?>
+    <?php else: ?>
+
     <?php endif; ?>
 
     <?= $form->field($model, 'status')->widget(Select2::class, [

@@ -46,6 +46,7 @@ use common\models\Invoice;
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort'=> ['defaultOrder' => ['invoice_due_date'=>SORT_ASC]]
         ]);
 
         $this->load($params);

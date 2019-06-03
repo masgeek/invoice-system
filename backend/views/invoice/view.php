@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= 'Invoice' . ' ' . Html::encode($this->title) ?></h2>
+            <h2><?= 'Invoice #' . ' ' . Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
 
@@ -46,8 +46,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'vat_percentage',
             'invoice_sub_total:currency',
             'invoice_total:currency',
-            'invoice_status',
-            'invoice_due_date',
+            'invoice_status_id',
+            'invoice_due_date:Date',
         ];
         echo DetailView::widget([
             'model' => $model,

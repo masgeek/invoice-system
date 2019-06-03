@@ -2,17 +2,17 @@
 
 namespace backend\controllers;
 
-use Yii;
-use common\models\UserProfile;
-use common\models\search\UserProfileSearch;
 use common\extend\BaseWebController;
+use common\extend\controllers\WebController;
+use common\models\search\UserProfileSearch;
+use common\models\UserProfile;
+use Yii;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * UserProfileController implements the CRUD actions for UserProfile model.
  */
-class UserProfileController extends BaseWebController
+class UserProfileController extends WebController
 {
 
     /**
@@ -41,6 +41,22 @@ class UserProfileController extends BaseWebController
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
+    }
+
+    /**
+     * Finds the UserProfile model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return UserProfile the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = UserProfile::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 
     /**
@@ -93,21 +109,5 @@ class UserProfileController extends BaseWebController
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
-    }
-
-    /**
-     * Finds the UserProfile model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return UserProfile the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($id)
-    {
-        if (($model = UserProfile::findOne($id)) !== null) {
-            return $model;
-        }
-
-        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use common\extend\BaseWebController;
+use common\extend\controllers\WebController;
 use common\models\Invoice;
 use common\models\InvoiceItem;
 use common\models\search\InvoiceSearch;
@@ -11,13 +12,12 @@ use yii\data\ArrayDataProvider;
 use yii\db\Exception;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 /**
  * InvoiceController implements the CRUD actions for Invoice model.
  */
-class InvoiceController extends Controller
+class InvoiceController extends WebController
 {
     public function behaviors()
     {
@@ -70,6 +70,22 @@ class InvoiceController extends Controller
             'providerInvoicePayment' => $providerInvoicePayment,
             'providerPaypalTransaction' => $providerPaypalTransaction,
         ]);
+    }
+
+    /**
+     * Finds the Invoice model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Invoice the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Invoice::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 
     /**
@@ -195,23 +211,6 @@ class InvoiceController extends Controller
         $this->findModel($id)->deleteWithRelated();
 
         return $this->redirect(['index']);
-    }
-
-
-    /**
-     * Finds the Invoice model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Invoice the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($id)
-    {
-        if (($model = Invoice::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
     }
 
     /**
