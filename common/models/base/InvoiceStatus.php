@@ -31,10 +31,10 @@ class InvoiceStatus extends \common\extend\models\BaseModel
     {
         return [
             [['status'], 'required'],
-            [['created_at', 'updated_at', 'updated_by', 'created_by'], 'integer'],
+            [['created_at', 'updated_at', 'updated_by', 'created_by', 'is_deleted'], 'integer'],
             [['status', 'slug'], 'string', 'max' => 30],
             [['color'], 'string', 'max' => 15],
-            [['is_deleted', 'client_visible'], 'string', 'max' => 1],
+            [['client_visible'], 'string', 'max' => 1],
             [['slug'], 'unique']
         ];
     }

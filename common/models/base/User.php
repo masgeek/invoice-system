@@ -37,12 +37,11 @@ class User extends \common\extend\models\BaseModel
     {
         return [
             [['username', 'email', 'auth_key', 'password_hash'], 'required'],
-            [['status', 'created_at', 'updated_at', 'created_by', 'updated_by', 'user_type'], 'integer'],
+            [['status', 'created_at', 'updated_at', 'created_by', 'updated_by', 'user_type', 'is_deleted'], 'integer'],
             [['username'], 'string', 'max' => 100],
             [['email', 'password_hash', 'password_reset_token', 'verification_token'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 64],
             [['slug'], 'string', 'max' => 30],
-            [['is_deleted'], 'string', 'max' => 1],
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],

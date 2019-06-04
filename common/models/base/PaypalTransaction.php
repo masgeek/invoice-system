@@ -34,14 +34,13 @@ class PaypalTransaction extends \common\extend\models\BaseModel
     {
         return [
             [['payment_id', 'invoice_id', 'amount_paid', 'payment_status'], 'required'],
-            [['invoice_id', 'created_at', 'updated_at', 'updated_by', 'created_by'], 'integer'],
+            [['invoice_id', 'created_at', 'updated_at', 'updated_by', 'created_by', 'is_deleted'], 'integer'],
             [['amount_paid'], 'number'],
             [['description'], 'string'],
             [['payment_id'], 'string', 'max' => 65],
             [['payment_token'], 'string', 'max' => 255],
             [['payment_status'], 'string', 'max' => 20],
             [['slug'], 'string', 'max' => 30],
-            [['is_deleted'], 'string', 'max' => 1],
             [['payment_id'], 'unique'],
             [['slug'], 'unique']
         ];

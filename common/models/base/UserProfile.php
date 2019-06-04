@@ -36,7 +36,7 @@ class UserProfile extends \common\extend\models\BaseModel
     public function rules()
     {
         return [
-            [['user_id', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
+            [['user_id', 'created_at', 'updated_at', 'created_by', 'updated_by', 'is_deleted'], 'integer'],
             [['company_name', 'surname', 'first_name', 'phone_number', 'country_code'], 'required'],
             [['address', 'notes'], 'string'],
             [['company_name'], 'string', 'max' => 120],
@@ -44,7 +44,6 @@ class UserProfile extends \common\extend\models\BaseModel
             [['phone_number'], 'string', 'max' => 50],
             [['slug'], 'string', 'max' => 30],
             [['country_code'], 'string', 'max' => 8],
-            [['is_deleted'], 'string', 'max' => 1],
             [['slug'], 'unique'],
             [['user_id'], 'unique']
         ];

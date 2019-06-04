@@ -38,11 +38,10 @@ class Invoice extends \common\extend\models\BaseModel
     {
         return [
             [['user_id', 'invoice_due_date'], 'required'],
-            [['user_id', 'invoice_status_id', 'created_at', 'updated_at', 'updated_by', 'created_by'], 'integer'],
+            [['user_id', 'invoice_status_id', 'created_at', 'updated_at', 'updated_by', 'created_by', 'is_deleted'], 'integer'],
             [['vat_percentage', 'invoice_sub_total', 'invoice_total'], 'number'],
             [['invoice_due_date'], 'safe'],
             [['slug'], 'string', 'max' => 30],
-            [['is_deleted'], 'string', 'max' => 1],
             [['slug'], 'unique']
         ];
     }

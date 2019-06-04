@@ -31,11 +31,10 @@ class InvoiceItem extends \common\extend\models\BaseModel
     {
         return [
             [['invoice_id', 'item_cost'], 'required'],
-            [['invoice_id', 'created_at', 'updated_at', 'updated_by', 'created_by'], 'integer'],
+            [['invoice_id', 'created_at', 'updated_at', 'updated_by', 'created_by', 'is_deleted'], 'integer'],
             [['item_description'], 'string'],
             [['item_cost'], 'number'],
             [['slug'], 'string', 'max' => 30],
-            [['is_deleted'], 'string', 'max' => 1],
             [['slug'], 'unique']
         ];
     }

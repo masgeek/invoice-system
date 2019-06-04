@@ -28,11 +28,10 @@ class InvoicePayment extends \common\extend\models\BaseModel
     public function rules()
     {
         return [
-            [['invoice_id', 'merchant_name', 'created_at', 'updated_at'], 'integer'],
+            [['invoice_id', 'merchant_name', 'created_at', 'updated_at', 'is_deleted'], 'integer'],
             [['amount_paid'], 'required'],
             [['amount_paid'], 'number'],
             [['slug'], 'string', 'max' => 30],
-            [['is_deleted'], 'string', 'max' => 1],
             [['slug'], 'unique']
         ];
     }
