@@ -13,7 +13,7 @@ class m190525_070255_add_soft_delete_columns extends \console\models\BaseMigrati
     public function safeUp()
     {
         foreach ($this->getTables() as $tableName) {
-            $this->addColumn($tableName, 'is_deleted', $this->boolean()->defaultValue(0));
+            $this->addColumn($tableName, 'is_deleted', $this->tinyInteger(1)->defaultValue(0));
         }
     }
 
