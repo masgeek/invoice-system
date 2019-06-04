@@ -13,7 +13,7 @@ class PaypalTransaction extends BasePaypalTransaction
     {
         $behaviors = parent::behaviors();
 
-        $behaviors['slug']['attribute'] = 'payment_id';
+        $behaviors['slug']['attribute'] = 'payment_token';
 
         return $behaviors;
     }
