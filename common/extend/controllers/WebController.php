@@ -92,7 +92,7 @@ class WebController extends Controller
 
     /**
      * @param $id
-     * @return int
+     * @return mixed|string|\yii\web\Response
      * @throws NotFoundHttpException
      */
     public function actionPaypalCheckout($id)

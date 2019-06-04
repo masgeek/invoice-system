@@ -62,6 +62,7 @@ $this->registerJs($js);
     ]); ?>
 
     <?= $form->field($model, 'vat_percentage')->textInput(['placeholder' => 'Vat Percentage']) ?>
+    <?= $form->field($model, 'is_deleted')->checkbox() ?>
 
     <?= $form->field($model, 'invoice_status_id')->widget(Select2::class, [
         'data' => $model->invoiceStatuses(),
